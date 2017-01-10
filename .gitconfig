@@ -1,0 +1,27 @@
+[user]
+	email = mchugh.r@gmail.com
+	name = Ronan McHugh
+[core]
+	editor = vim
+	pager = diff-so-fancy | less --tabs=1,5 -R
+[push]
+	default = simple
+[color]
+	ui = true
+[alias]
+	co = checkout
+	s = status
+	ci = commit
+	unstage = reset HEAD --
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    sshow = "!f() { git stash show stash^{/$*} -p; }; f"
+    sapply = "!f() { git stash apply stash^{/$*}; }; f"
+[merge]
+	tool = meld
+[mergetool]
+	keepBackup = false
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
