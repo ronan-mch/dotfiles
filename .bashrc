@@ -8,9 +8,7 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -18,6 +16,7 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=100000
 HISTFILESIZE=200000
+HISTCONTROL=ignoreboth:erasedups
 export EDITOR=vim
 
 # check the window size after each command and, if necessary,
@@ -41,19 +40,23 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lh='ls -lh'
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+# aliases for copying and pasting from cmd line
+alias pcp='xclip -selection clipboard'
+alias pps='xclip -selection clipboard -o'
 
+# RBENV
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
   }
-   
+
   RED="\[\033[0;31m\]"
   YELLOW="\[\033[0;33m\]"
   GREEN="\[\033[0;32m\]"
   NO_COLOR="\[\033[0m\]"
-   
+
 PS1="\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 alias config='/usr/bin/git --git-dir=/home/ronan/.cfg --work-tree=/home/ronan'
 
