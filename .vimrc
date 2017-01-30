@@ -15,6 +15,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'mileszs/ack.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,3 +36,6 @@ set expandtab
 map <C-n> :NERDTreeToggle<CR>
 colorscheme monokai
 syntax on
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
