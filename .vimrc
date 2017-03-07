@@ -20,6 +20,7 @@ Plugin 'mileszs/ack.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+au BufRead,BufNewFile *.md set filetype=markdown
 au FileType elixir setl sw=2 sts=2 et iskeyword+=!,?
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 set nu
