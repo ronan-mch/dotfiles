@@ -78,3 +78,4 @@ function be() {
   echo "bundle exec $@";
   bundle exec $@;
 }
+stty -ixon
