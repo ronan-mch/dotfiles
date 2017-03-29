@@ -44,6 +44,8 @@ alias lh='ls -lh'
 alias pcp='xclip -selection clipboard'
 alias pps='xclip -selection clipboard -o'
 
+alias tmux='tmux -2'
+
 # RBENV
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
