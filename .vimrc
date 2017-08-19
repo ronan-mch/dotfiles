@@ -13,6 +13,9 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'sickill/vim-monokai'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mileszs/ack.vim'
@@ -22,6 +25,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.jbuilder set filetype=ruby
 au FileType elixir setl sw=2 sts=2 et iskeyword+=!,?
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 set nu
@@ -46,3 +50,4 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_command = "!bundle exec rspec {spec}"

@@ -12,6 +12,7 @@
 	co = checkout
 	s = status
 	ci = commit
+	wc = whatchanged
 	unstage = reset HEAD --
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
     sshow = "!f() { git stash show stash^{/$*} -p; }; f"
