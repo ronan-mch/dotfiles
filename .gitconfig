@@ -17,6 +17,7 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
     sshow = "!f() { git stash show stash^{/$*} -p; }; f"
     sapply = "!f() { git stash apply stash^{/$*}; }; f"
+	st = status -sb
 [merge]
 	tool = meld
 [mergetool]
