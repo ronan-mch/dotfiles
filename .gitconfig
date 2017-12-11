@@ -18,6 +18,9 @@
     sshow = "!f() { git stash show stash^{/$*} -p; }; f"
     sapply = "!f() { git stash apply stash^{/$*}; }; f"
 	st = status -sb
+	dc = diff --cached
+    slog = log --pretty=oneline --abbrev-commit
+    logme = log --author=Ronan
 [merge]
 	tool = meld
 [mergetool]
