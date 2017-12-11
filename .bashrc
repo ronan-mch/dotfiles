@@ -80,4 +80,8 @@ function be() {
   echo "bundle exec $@";
   bundle exec $@;
 }
+function hgrep() {
+    echo "history | grep $@";
+    history | grep $@;
+}
 stty -ixon
