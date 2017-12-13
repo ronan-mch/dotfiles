@@ -62,6 +62,15 @@ function parse_git_branch () {
 PS1="\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 alias config='/usr/bin/git --git-dir=/home/ronan/.cfg --work-tree=/home/ronan'
 
+function lb() {
+    today=$(date '+%Y-%m-%d')
+    fp="/home/ronan/logbook/${today}.md"
+    echo $fp
+    if [ ! -f $fp ]; then
+        echo "# ${today}" > $fp
+    fi
+    vim $fp
+}
 man() {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
