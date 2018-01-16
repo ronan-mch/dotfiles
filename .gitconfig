@@ -19,7 +19,7 @@
     sapply = "!f() { git stash apply stash^{/$*}; }; f"
 	st = status -sb
 	dc = diff --cached
-    slog = log --pretty=oneline --abbrev-commit
+    slog = log --pretty=oneline --abbrev-commit -10
     logme = log --author=Ronan
 [merge]
 	tool = meld
